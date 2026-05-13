@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇧🇩 The Broken Desk | BD Education Crisis – Awareness by Saif (8th Grader)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0c0f;
+            font-family: 'Segoe UI', 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+            color: #f0ede8;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e1b16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c4451c;
+            border-radius: 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #ff6a3d, #ffb347, #ff2e00);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .glitch {
+            font-family: monospace;
+            font-size: 1rem;
+            background: #2c1a12;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            color: #ffbba0;
+            border-left: 3px solid #ff5e2e;
+        }
+
+        .alert-banner {
+            background: #2f1b12;
+            border-left: 12px solid #e34d2b;
+            padding: 1rem 1.8rem;
+            border-radius: 28px;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ff784e;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-tile {
+            background: #151218;
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            border-bottom: 3px solid #e05a2c;
+            transition: transform 0.2s;
+        }
+
+        .stat-tile:hover {
+            transform: translateY(-6px);
+            background: #1d181f;
+        }
+
+        .big-stat {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ff845e;
+        }
+
+        .case-card {
+            background: #100e14;
+            border-radius: 2rem;
+            padding: 1.6rem;
+            margin: 1.4rem 0;
+            border-left: 6px solid #cc4125;
+        }
+
+        .case-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffaa7a;
+            margin-bottom: 0.5rem;
+        }
+
+        .source {
+            color: #a7846a;
+            font-size: 0.8rem;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+
+        .footer-made {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #0f0d12;
+            border-radius: 2rem;
+            text-align: center;
+            border: 1px solid #2f241d;
+        }
+
+        .email-link {
+            color: #ff9f6e;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px dashed #ff7640;
+        }
+
+        .solution-badge {
+            background: #1a2b1f;
+            border-radius: 60px;
+            padding: 0.3rem 1.2rem;
+            display: inline-block;
+            margin: 0.2rem;
+            border-left: 3px solid #60b070;
+        }
+
+        /* Opinion system styles merged */
+        .opinion-panel {
+            background: #141118;
+            border-radius: 2rem;
+            padding: 1.8rem;
+            margin: 2.5rem 0;
+            border: 1px solid #ff764030;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .opinion-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #ffb085;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .opinion-sub {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #aa9f8f;
+            margin-bottom: 1.3rem;
+        }
+
+        .opinion-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .opinion-form input, .opinion-form textarea {
+            background: #0e0b12;
+            border: 1px solid #5c3e2c;
+            border-radius: 1.5rem;
+            padding: 0.8rem 1rem;
+            color: #f2e5d8;
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+        }
+
+        .opinion-form textarea {
+            border-radius: 1.2rem;
+            min-height: 100px;
+        }
+
+        .opinion-form button {
+            background: #c4451c;
+            border: none;
+            border-radius: 3rem;
+            padding: 0.8rem;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .opinion-form button:hover {
+            background: #e05a2a;
+            transform: scale(0.98);
+        }
+
+        .opinion-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 0.3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .opinion-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .opinion-list::-webkit-scrollbar-track {
+            background: #1e1a1a;
+            border-radius: 10px;
+        }
+        .opinion-list::-webkit-scrollbar-thumb {
+            background: #ff7640;
+            border-radius: 10px;
+        }
+
+        .opinion-item {
+            background: #0f0c14;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1rem;
+            border-left: 4px solid #ff7640;
+        }
+
+        .opinion-name {
+            font-weight: bold;
+            color: #ffb183;
+            font-size: 0.8rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .opinion-text {
+            font-size: 0.92rem;
+            word-break: break-word;
+        }
+
+        .opinion-time {
+            font-size: 0.65rem;
+            color: #6a5e52;
+            margin-top: 0.4rem;
+            text-align: right;
+        }
+
+        .privacy-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            color: #6a5e52;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- HEADER -->
+     <div class="hero">
+        <h1 style="font-size: clamp(1.8rem, 6vw, 3.2rem); line-height: 1.3;">"A bad education system can destroy a nation faster than any army."</h1>
+        <div style="font-size: 1.2rem; margin-top: 0.8rem; color: #ffaa7a; letter-spacing: 1px;">~ Nelson Mandela</div>
+        <div style="height: 2px; width: 60px; background: #ff5e2e; margin: 1rem auto;"></div>
+        <div style="font-size: 1rem; margin-top: 0.5rem; color: #e6cfb5;"></div>
+        <div style="font-size: 1rem; margin-top: 0.3rem; color: #c0b5a8;">Presenting you, the truth about bangladesh education, no filter, real bodies, real blood</div>
+        <div class="glitch" style="margin-top: 1rem;">⚠️ AWARENESS ZONE, BASED ON REAL INCIDENTS (2024-2026) ⚠️</div>
+    </div>
+
+    <!-- HARD STATS BANNER -->
+    <div class="alert-banner">
+        <div>📢<strong> 🔴 403 STUDENTS</strong> died by suicide in Bangladesh in 2025 alone.</div>
+        <div class="stat-number">📉 +30% from 2024</div>
+    </div>
+
+    <!-- STATS GRID -->
+    <div class="stats-grid">
+        <div class="stat-tile"><span class="big-stat">190+</span><br>🏫 School students (below class 10), children.</div>
+        <div class="stat-tile"><span class="big-stat">72%</span><br>📚 linked to academic pressure and exam trauma.</div>
+        <div class="stat-tile"><span class="big-stat">68.3%</span><br>💔 of exam-result suicides happened on the SAME DAY results came out.</div>
+        <div class="stat-tile"><span class="big-stat">61.8%</span><br>👧 were girls, honour pressure plus early marriage threat.</div>
+        <div class="stat-tile"><span class="big-stat">29.2%</span><br>📍 Dhaka division accounts for highest student suicides.</div>
+        <div class="stat-tile"><span class="big-stat">2/3</span><br>🧠 rural students, zero counselling, zero mental health support.</div>
+    </div>
+
+    <!-- REAL TRAGEDIES -->
+    <h2 style="font-size: 1.9rem; margin: 2rem 0 0.5rem 0;">🕯️ REAL TRAGEDIES. REAL NAMES. REAL PAIN.</h2>
+    <div style="height: 4px; width: 80px; background: #ff5e2e; margin-bottom: 1.5rem;"></div>
+
+    <div class="case-card">
+        <div class="case-title">📅 MAY 2024, SSC RESULT DAY MASSACRE</div>
+        <div>At least <strong>8 students</strong> took their own lives across Noakhali, Nilphamari, Thakurgaon, Mymensingh, Jhenaidah, Gopalganj, Habiganj and Magura, on the <strong>same day</strong> results were published. They were between 15-17 years old. GPA wasn't 'perfect'. The system made them believe they were worthless.</div>
+        <div class="source">🔍 source: The Daily Star, June 2025 / Aachol Foundation</div>
+    </div>
+
+    <div class="case-card">
+        <div class="case-title">👧 MARIAM UMME AFIA, "Now the teachers adore me"</div>
+        <div>Mariam, a young schoolgirl, begged her mother: "Ammu, get me into coaching. If you don't, the miss won't be nice to me." Coaching mafia had taken over. Days later, she died in a plane crash while going for coaching classes. Her mother's words exposed the brutal coaching culture that destroys mental peace since childhood.</div>
+        <div class="source">🔍 source: The Daily Star (Wasim Bin Habib), real testimony</div>
+    </div>
+
+    <div class="case-card">
+        <div class="case-title">🎓 THE DU STUDENT FROM TEA GARDEN</div>
+        <div>A brilliant student from a tea garden labor family fought poverty, extreme adversity, made it to Dhaka University. But the pressure of 'proving yourself', financial strain and academic expectations crushed him. He died by suicide in his dorm. Nobody noticed the signs.</div>
+        <div class="source">🔍 source: Daily Observer, August 2025 + DU social service records</div>
+    </div>
+
+    <div class="case-card">
+        <div class="case-title">📖 RAFIA, CLASS 2, CAN'T READ, STILL PASSED</div>
+        <div>Rafia from Narsingdi finished 2nd grade. She <strong>cannot read Bangla</strong>. Not a single sentence. Still, the system gave her a 'pass'. Because the curriculum only cares about enrollment and fake pass rates. 90% pass, but children learn nothing. This is criminal negligence.</div>
+        <div class="source">🔍 source: The Daily Star, 'Education in 2025: A Year of Strikes'</div>
+    </div>
+
+    <div class="case-card">
+        <div class="case-title">🧾 HSC CANDIDATE, RAJSHAHI, HANGED HOURS AFTER RESULT</div>
+        <div>A 19-year-old boy scored 'low' (GPA 3.8), family shamed him for not getting GPA-5. Within 12 hours, he was dead. Autopsy confirmed suicide triggered by academic humiliation. His diary wrote: "I tried. I really tried."</div>
+        <div class="source">🔍 source: Wiley study, "Suicide After Publication of Exam Results in Bangladesh" (142 case deep-dive)</div>
+    </div>
+
+    <!-- PSYCHOLOGICAL DATA -->
+    <h2 style="font-size: 1.9rem; margin: 2.5rem 0 1rem 0;">🧠 THE SILENT EPIDEMIC: MENTAL HEALTH</h2>
+    <div class="stats-grid">
+        <div class="stat-tile"><span class="big-stat">20%</span><br>😔 of Bangladeshi adolescents show anxiety or depression signs</div>
+        <div class="stat-tile"><span class="big-stat">&lt;3%</span><br>🚫 receive any form of mental health support</div>
+        <div class="stat-tile"><span class="big-stat">0</span><br>🏫 govt school counselors in 90% of schools outside Dhaka</div>
+    </div>
+
+    <!-- ========== WHY CURRICULUM IS KILLING US ========== -->
+    <h2 style="font-size: 1.9rem; margin-top: 2rem; background: linear-gradient(125deg, #c44dff, #ff3b6f); background-clip: text; -webkit-background-clip: text; color: transparent;">🏚️ WHY THE CURRICULUM IS KILLING US</h2>
+    <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #c44dff, #ff3b6f); margin-bottom: 1.5rem; border-radius: 4px;"></div>
+    <div style="background: #0d0b10; border-radius: 2rem; padding: 1.8rem; margin: 1.5rem 0;">
+        <div style="background: #18141c; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #c44dff;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <span style="font-size: 1.8rem;">📘</span>
+                <strong style="font-size: 1.3rem; color: #d98cff;">ROTE LEARNING CULTURE</strong>
+            </div>
+            <div style="color: #cfc6bc;">memorize 10 chapters, vomit in exam, forget next week. Zero creativity, zero logic. If you fail to mug up, you're called 'useless'.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #c44dff;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <span style="font-size: 1.8rem;">💸</span>
+                <strong style="font-size: 1.3rem; color: #d98cff;">COACHING MAFIA</strong>
+            </div>
+            <div style="color: #cfc6bc;">teachers deliberately skip portions in school to run private tuition. Poor kids can't afford coaching, destroyed future.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #c44dff;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <span style="font-size: 1.8rem;">🎯</span>
+                <strong style="font-size: 1.3rem; color: #d98cff;">GPA OBSESSION</strong>
+            </div>
+            <div style="color: #cfc6bc;">parents compare neighbors' kids, 'alpha child' pressure. 1% less means emotional abuse at home.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #c44dff;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <span style="font-size: 1.8rem;">📉</span>
+                <strong style="font-size: 1.3rem; color: #d98cff;">OUTDATED SYLLABUS</strong>
+            </div>
+            <div style="color: #cfc6bc;">learning British Raj history 5 times, but no financial literacy, no emotional intelligence, no coding basics. 2025 world, 1985 syllabus.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #c44dff;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <span style="font-size: 1.8rem;">🏚️</span>
+                <strong style="font-size: 1.3rem; color: #d98cff;">URBAN vs RURAL GAP</strong>
+            </div>
+            <div style="color: #cfc6bc;">Dhaka city students have 10 times more resources than village schools. Yet same exam board. Digital divide, real division.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.5rem; padding: 1.2rem 1.5rem; border-left: 5px solid #c44dff;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+                <span style="font-size: 1.8rem;">🚨</span>
+                <strong style="font-size: 1.3rem; color: #d98cff;">NO MENTAL HEALTH</strong>
+            </div>
+            <div style="color: #cfc6bc;">schools have zero psychologists. If a student cries, teachers call it 'drama'. Parents call it 'lazy'. Then a dead body.</div>
+        </div>
+    </div>
+
+    <!-- ========== THE CYCLE OF FAILURE ========== -->
+    <h2 style="font-size: 2rem; font-weight: 800; margin: 2.5rem 0 0.5rem 0; background: linear-gradient(125deg, #ffb47b, #ff5e2e); background-clip: text; -webkit-background-clip: text; color: transparent;">🔄 The Cycle of Failure: Curriculum as a Political Toy</h2>
+    <div style="width: 100px; height: 4px; background: linear-gradient(90deg, #ff5e2e, #ffb47b); margin-bottom: 1.5rem; border-radius: 4px;"></div>
+
+    <div style="background: #1a151e; border-radius: 1.8rem; padding: 1.2rem 1.8rem; margin-bottom: 1.8rem; border-left: 6px solid #ff5e2e;">
+        <div style="color: #e6cfb5; font-size: 1rem;">In Bangladesh, the national curriculum has rarely been updated for pedagogical progress. Instead, each regime has overhauled it to erase the previous government's legacy, leaving students as collateral damage.</div>
+    </div>
+
+    <!-- Government 1: Pre-2006 -->
+    <div style="background: linear-gradient(145deg, #0d0b10, #121016); border-radius: 1.8rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(255,90,40,0.25);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+            <span style="font-size: 2rem;">1️⃣</span>
+            <span style="font-size: 1.5rem; font-weight: 700; color: #ffa067;">The Pre-2006 Era (BNP & Awami League Cycles)</span>
+        </div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;"><strong style="color: #ff8c5a;">The Problem:</strong> Frequent shifts between "traditional" textbook-based learning and short-lived "practical" education.</div>
+        <div style="color: #cfc6bc; background: #18141c; border-radius: 1.2rem; padding: 0.8rem 1.2rem;">
+            <strong style="color: #ffaa7a;">Example:</strong> In the late 1990s and early 2000s, the BNP introduced the Madrasah Education Parallel Track, forcing mainstream students into bifurcated streams without adequate infrastructure. Simultaneously, they experimented with School Based Assessment (SBA), which collapsed within two years due to lack of teacher training, only to be reinstated by the next AL government.
+        </div>
+    </div>
+
+    <!-- Government 2: Hasina Era -->
+    <div style="background: linear-gradient(145deg, #0d0b10, #121016); border-radius: 1.8rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(255,90,40,0.25);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+            <span style="font-size: 2rem;">2️⃣</span>
+            <span style="font-size: 1.5rem; font-weight: 700; color: #ffa067;">The Sheikh Hasina Era (2009–2024): The "New Curriculum" Disaster</span>
+        </div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;"><strong style="color: #ff8c5a;">The Failure:</strong> The introduction of the National Curriculum Framework 2021 (implemented in 2023) was the most destructive experiment. It abolished traditional annual exams for grades 1–9, replacing them with "continuous assessment" and "project-based learning."</div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem; margin: 0.8rem 0;">
+            <div style="color: #ffad82;">📚 <strong>No Textbooks on Time:</strong> In 2023 and 2024, students received revised textbooks in March, three months into the academic year.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem; margin: 0.8rem 0;">
+            <div style="color: #ffad82;">📊 <strong>The Grading Nightmare:</strong> Teachers were forced to assign "Band Scores" (A, B, C) without exams. Subjective criteria led to parents bribing teachers for higher bands.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem; margin: 0.8rem 0;">
+            <div style="color: #ffad82;">🏚️ <strong>Mass Dropouts:</strong> In rural areas, where parents cannot help with "creative projects," dropout rates for grades 6-8 rose by 15% (UNICEF Bangladesh, 2023).</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem;">
+            <div style="color: #ffad82;">🧠 <strong>Mental Health Crisis:</strong> Students reported debilitating anxiety over undefined "portfolio submissions." In 2024, at least 14 student suicides were linked to new curriculum pressure (per Daily Star reports).</div>
+        </div>
+    </div>
+
+    <!-- Government 3: Yunus Interim -->
+    <div style="background: linear-gradient(145deg, #0d0b10, #121016); border-radius: 1.8rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(255,90,40,0.25);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+            <span style="font-size: 2rem;">3️⃣</span>
+            <span style="font-size: 1.5rem; font-weight: 700; color: #ffa067;">Dr. Yunus-led Interim Government (Aug 2024 – Present): The Abrupt Reversal</span>
+        </div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;"><strong style="color: #ff8c5a;">The Failure:</strong> After the fall of the Hasina govt, the Yunus administration, instead of fixing the new curriculum, ordered a complete suspension of the 2021 framework for all grades except 6 and 7.</div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem; margin: 0.8rem 0;">
+            <div style="color: #ffad82;">⚠️ <strong>Mid-Year Chaos:</strong> In October 2024, they announced that annual exams (cancelled for 3 years) would return for grades 8, 9, and 10 immediately. Students had no books, syllabus, or preparation time.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem; margin: 0.8rem 0;">
+            <div style="color: #ffad82;">🗣️ <strong>Conflicting Statements:</strong> The Education Adviser (Wahiduddin Mahmud) first praised the "competency-based curriculum," then declared it "unimplementable." Students were left in limbo for 4 months without a syllabus.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem;">
+            <div style="color: #ffad82;">💰 <strong>Wasted Resources:</strong> Millions of Taka spent on training teachers for the new curriculum became useless overnight. New textbooks for 2025 were paused mid-printing.</div>
+        </div>
+    </div>
+
+    <!-- Government 4: BNP coming -->
+    <div style="background: linear-gradient(145deg, #0d0b10, #121016); border-radius: 1.8rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid rgba(255,90,40,0.25);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1rem;">
+            <span style="font-size: 2rem;">4️⃣</span>
+            <span style="font-size: 1.5rem; font-weight: 700; color: #ffa067;">The Current BNP (2025 opposition/expected govt): Repeating the Cycle</span>
+        </div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;"><strong style="color: #ff8c5a;">The Failure:</strong> The BNP has already announced that if they come to power, they will scrap the entire 2021 curriculum and return to the 2012 curriculum.</div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem; margin: 0.8rem 0;">
+            <div style="color: #ffad82;">📆 <strong>The 2025 Batch Crisis:</strong> Students who are currently in grade 9 (under Hasina's 2021 framework) will be forced to take BNP's 2012-style board exams in 2026. The syllabi have zero overlap. One requires project portfolios; the other requires memorized essays.</div>
+        </div>
+        <div style="background: #18141c; border-radius: 1.2rem; padding: 0.9rem 1.2rem;">
+            <div style="color: #ffad82;">⏸️ <strong>Stalled Learning:</strong> BNP leaders have openly said they will "take a full academic year to redesign the curriculum" meaning current students will essentially lose 2025–2026.</div>
+        </div>
+    </div>
+
+    <!-- Cumulative Result -->
+    <div style="background: #1f1010; border-radius: 1.8rem; padding: 1.5rem; margin-bottom: 2rem; border: 2px solid #c4451c;">
+        <div style="font-size: 1.4rem; font-weight: 700; color: #ff7a4a; text-align: center; margin-bottom: 0.8rem;">📉 The Cumulative Result: Millions as Guinea Pigs</div>
+        <div style="color: #cfc6bc; margin-bottom: 0.6rem;">🎓 <strong>Class 10 Students (2024-2025):</strong> Started under Hasina's new curriculum (no exams), switched to Yunus's hybrid (mid-year exams), will likely finish under BNP's old curriculum (rote learning). That is three radical shifts in two years.</div>
+        <div style="color: #cfc6bc; margin-bottom: 0.6rem;">🌍 <strong>Global Ranking Collapse:</strong> Bangladesh fell from 80th to 120th in the Global Education Monitoring Report (2024) due to "policy volatility."</div>
+        <div style="color: #cfc6bc;">💼 <strong>Economic Impact:</strong> Employers report that 2023–2025 graduates have "no consistent skills." They neither know project-work nor traditional theory.</div>
+        <div style="color: #ffaa7a; margin-top: 1rem; text-align: center; font-style: italic;">From BNP's Madrasah experiments to Hasina's failed 2021 competency framework, to Yunus's panicked rollback, to BNP's promised erasure. Each government has treated the curriculum as a political artifact rather than a living document for children. The result is not reform; it is a revolving door of educational trauma, where no student learns a complete system, and each regime blames the last for the mess they inherit and worsen.</div>
+    </div>
+
+   <!-- ========== WHAT WERE THE FAULTS OF THOSE INNOCENT STUDENTS? - DANGEROUS EDITION ========== -->
+<div style="margin: 2.5rem 0 2rem 0; text-align: center; position: relative;">
+    <!-- blood drip effect -->
+    <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-size: 2rem; opacity: 0.6;">🩸</div>
+    <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(125deg, #ff2a2a, #ff0000, #8b0000); background-clip: text; -webkit-background-clip: text; color: transparent; text-shadow: 0 0 15px rgba(255,0,0,0.3);">❓ What Were the Faults of Those Innocent Students?</div>
+    <div style="width: 100px; height: 3px; background: linear-gradient(90deg, #ff0000, #8b0000, #ff0000); margin: 0.8rem auto; border-radius: 3px;"></div>
+    <div style="font-size: 0.8rem; color: #ff6666; letter-spacing: 2px;">⚠️ THEIR ONLY CRIME WAS BEING BORN ⚠️</div>
+</div>
+
+<!-- Question 1 -->
+<div style="background: linear-gradient(145deg, #1a0a0a, #140808); border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #ff2222; box-shadow: 0 0 8px rgba(255,0,0,0.2); transition: all 0.2s;">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-size: 1.8rem; filter: drop-shadow(0 0 3px #ff0000);">1️⃣</span>
+        <strong style="font-size: 1.2rem; color: #ff6666; text-shadow: 0 0 3px rgba(255,0,0,0.3);">What was their fault for being born in 2010?</strong>
+    </div>
+    <div style="color: #e6c4c4;">A child born in 2010 started school under the old curriculum (2012 version). By 2023 (Grade 8), they were forced into Hasina's new curriculum with zero exams. By 2024 (Grade 9), Yunus brought back annual exams. By 2025, the BNP promises to return to the 2012 curriculum. Their fault? They simply aged into a political battlefield.</div>
+</div>
+
+<!-- Question 2 -->
+<div style="background: linear-gradient(145deg, #1a0a0a, #140808); border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #ff2222; box-shadow: 0 0 8px rgba(255,0,0,0.2);">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-size: 1.8rem; filter: drop-shadow(0 0 3px #ff0000);">2️⃣</span>
+        <strong style="font-size: 1.2rem; color: #ff6666; text-shadow: 0 0 3px rgba(255,0,0,0.3);">What was their fault for believing the government's textbook?</strong>
+    </div>
+    <div style="color: #e6c4c4;">In 2023, a Class 6 student received a shiny new "competency-based" textbook with cute illustrations of project work. Their parents bought art supplies, a printer for assignments, and a smartphone for online resources. By 2024, that entire system was declared "failed" by the Yunus govt. Their fault? They trusted the state to give them a valid education.</div>
+</div>
+
+<!-- Question 3 -->
+<div style="background: linear-gradient(145deg, #1a0a0a, #140808); border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #ff2222; box-shadow: 0 0 8px rgba(255,0,0,0.2);">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-size: 1.8rem; filter: drop-shadow(0 0 3px #ff0000);">3️⃣</span>
+        <strong style="font-size: 1.2rem; color: #ff6666; text-shadow: 0 0 3px rgba(255,0,0,0.3);">What was their fault for wanting a normal exam?</strong>
+    </div>
+    <div style="color: #e6c4c4;">A Class 10 student in 2024 faced the absurd reality: some schools held no exams (following Hasina's rules), some held half-yearlies (following Yunus's mid-year reversal), and some held full annuals (rumored to be the BNP's future demand). The student asked their headmaster, "Ma'am, what should I study?" The headmaster replied, "I don't know either." Their fault? They wanted clarity in a system designed to be chaotic.</div>
+</div>
+
+<!-- Question 4 -->
+<div style="background: linear-gradient(145deg, #1a0a0a, #140808); border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #ff2222; box-shadow: 0 0 8px rgba(255,0,0,0.2);">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-size: 1.8rem; filter: drop-shadow(0 0 3px #ff0000);">4️⃣</span>
+        <strong style="font-size: 1.2rem; color: #ff6666; text-shadow: 0 0 3px rgba(255,0,0,0.3);">What was their fault for being poor?</strong>
+    </div>
+    <div style="color: #e6c4c4;">When Hasina's new curriculum demanded "project-based learning," a rural student had to submit a model of a solar panel. Their family earns 200 Tk/day. They couldn't buy a glue stick. Their rich classmates submitted perfect 3D-printed models. The teacher gave the rich student an "A+" and the poor student a "C." Their fault? They were born into poverty while the curriculum assumed everyone has a laptop and a parent with a Master's degree.</div>
+</div>
+
+<!-- Question 5 -->
+<div style="background: linear-gradient(145deg, #1a0a0a, #140808); border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #ff2222; box-shadow: 0 0 8px rgba(255,0,0,0.2);">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-size: 1.8rem; filter: drop-shadow(0 0 3px #ff0000);">5️⃣</span>
+        <strong style="font-size: 1.2rem; color: #ff6666; text-shadow: 0 0 3px rgba(255,0,0,0.3);">What was their fault for being honest?</strong>
+    </div>
+    <div style="color: #e6c4c4;">Under Yunus's abrupt reversal, students were told: "We will conduct the annual exam based on chapters 1–5 only." They studied only those chapters. Then, one week before the exam, a notice said: "Full syllabus." They had no time. Those who cheated passed. Those who studied honestly failed. Their fault? They played by the rules while the rules changed mid-game.</div>
+</div>
+
+<!-- Question 6 -->
+<div style="background: linear-gradient(145deg, #1a0a0a, #140808); border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #ff2222; box-shadow: 0 0 8px rgba(255,0,0,0.2);">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-size: 1.8rem; filter: drop-shadow(0 0 3px #ff0000);">6️⃣</span>
+        <strong style="font-size: 1.2rem; color: #ff6666; text-shadow: 0 0 3px rgba(255,0,0,0.3);">What was their fault for not being politicians?</strong>
+    </div>
+    <div style="color: #e6c4c4;">A teenager in 2025 has already lived through three education ministers (from Hasina, then Yunus's adviser, soon BNP's nominee). Each one claimed "the previous system was garbage." None apologized to the students who lost years. Their fault? They dared to be children in a country where adults play politics with their future.</div>
+</div>
+
+<!-- Question 7 (the heaviest one - more intense red) -->
+<div style="background: linear-gradient(145deg, #2a0a0a, #1f0505); border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #ff0000; box-shadow: 0 0 15px rgba(255,0,0,0.4); border-top: 1px solid #ff3333;">
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
+        <span style="font-size: 1.8rem; filter: drop-shadow(0 0 5px #ff0000);">7️⃣</span>
+        <strong style="font-size: 1.2rem; color: #ff4444; text-shadow: 0 0 5px rgba(255,0,0,0.5);">What is their fault for having nightmares?</strong>
+        <span style="background: #8b0000; padding: 0.2rem 0.6rem; border-radius: 30px; font-size: 0.65rem; font-weight: bold;"></span>
+    </div>
+    <div style="color: #ffbbbb;">In 2024 alone, at least 14 students took their own lives citing "new curriculum pressure" and "uncertainty about exams" (per The Daily Star and Prothom Alo reports). They left notes saying: "I don't know what to study anymore. I am tired." Their fault? They were human beings who reached their limit.</div>
+</div>
+
+<!-- closing bloody divider -->
+<div style="text-align: center; margin: 1rem 0 1rem 0; padding: 0.5rem;">
+    <span style="color: #ff4444; font-size: 0.8rem; letter-spacing: 2px;">✝️ 403 SILENT SCREAMS ✝️</span>
+</div>
+
+    <!-- ========== SOLUTIONS SECTION ========== -->
+    <h2 style="font-size: 2rem; font-weight: 800; margin: 2.5rem 0 0.5rem 0; background: linear-gradient(125deg, #60b070, #2ecc71); background-clip: text; -webkit-background-clip: text; color: transparent;">💡 Solutions to Stop the Curriculum Crisis</h2>
+    <div style="width: 100px; height: 4px; background: linear-gradient(90deg, #2ecc71, #60b070); margin-bottom: 1.5rem; border-radius: 4px;"></div>
+
+    <div style="background: #1a1e1a; border-radius: 1.8rem; padding: 1.2rem 1.8rem; margin-bottom: 1.8rem; border-left: 6px solid #2ecc71;">
+        <div style="color: #d4ecd0; font-size: 1rem;">Here is what real reform looks like. Not political theater. Not empty promises. Actual, actionable fixes that would save millions of students.</div>
+    </div>
+
+    <!-- Solution 1 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">📜</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">1. Pass a "National Education Stability Act" (NESA)</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> Legislate that no government can change the core curriculum framework more than once every 15 years. Only minor, evidence-based updates (like adding new scientific discoveries) are allowed annually.</div>
+        <div style="color: #a0ba9c; font-size: 0.9rem;"><strong>Who must enforce:</strong> Parliament, with a ⅔ majority so no single party can repeal it.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> Textbooks remain valid for a decade. Teachers train once. Students graduate under one consistent system.</div>
+    </div>
+
+    <!-- Solution 2 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">🏛️</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">2. Create an Independent, Apolitical National Curriculum Authority (NCA)</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> Remove curriculum power from the Ministry of Education entirely. Form an NCA staffed by career pedagogists, child psychologists, and subject experts, not politicians, not bureaucrats, not party loyalists.</div>
+        <div style="color: #a0ba9c; font-size: 0.9rem;"><strong>Selection process:</strong> Appointed by a parliamentary committee, confirmed by civil society, with 10-year non-renewable terms.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> When a new government comes, they cannot fire the NCA. The curriculum survives elections.</div>
+    </div>
+
+    <!-- Solution 3 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">🧪</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">3. Mandate a 3-Year Phased Pilot Before Any National Rollout</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> Any new curriculum must be tested in 50 pilot schools (rural, urban, rich, poor) for three full academic years. Data on dropout rates, exam scores, and mental health must be published publicly. Only then can Parliament vote on full implementation.</div>
+        <div style="color: #ffaa7a; font-size: 0.9rem;"><strong>Example of past failure:</strong> Hasina's 2021 curriculum was rolled out nationwide in 2023 without a single pilot year. That is criminal negligence.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> Errors are caught before millions suffer.</div>
+    </div>
+
+    <!-- Solution 4 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">🔄</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">4. Decouple Curriculum from Political Erasure of the Previous Regime</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> By law, no new government can scrap the previous curriculum solely because it was 'introduced by the opposition.' Scrapping requires a two-year bipartisan review proving the curriculum is pedagogically harmful, not politically inconvenient.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> Stops the revenge cycle. The 2012 curriculum was scrapped not because it failed children, but because it belonged to the BNP. The 2021 curriculum was scrapped not because it failed children, but because it belonged to Hasina. Students are hostages in a political divorce.</div>
+    </div>
+
+    <!-- Solution 5 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">🗣️</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">5. Establish a Permanent Student and Parent Grievance Commission</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> A commission with legal power to halt a curriculum change mid-year if student suicides rise above a threshold or if 10,000 parents file a petition. The commission can demand emergency revisions or a return to the previous syllabus.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> Currently, students scream into a void. This gives them teeth.</div>
+    </div>
+
+    <!-- Solution 6 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">⏳</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">6. Guarantee a 2-Year Transition Period for Any Change</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> If a curriculum change is absolutely necessary (like adding climate science), students already in the system must finish under the old rules. Only new incoming classes start the new system.</div>
+        <div style="color: #ffaa7a; font-size: 0.9rem;"><strong>Example of what not to do:</strong> In 2024, Yunus's government told Class 9 students (already 2 years into Hasina's system) to take a completely different board exam. That is educational violence.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> No student is caught mid-stream.</div>
+    </div>
+
+    <!-- Solution 7 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">📅</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">7. Cap Textbook Delays at March 31 of the Previous Year</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> Textbooks for the next academic year must be printed and delivered to every school by December 31. A constitutional penalty applies to any education minister who fails.</div>
+        <div style="color: #ffaa7a; font-size: 0.9rem;"><strong>Example of past failure:</strong> Hasina's 2024 textbooks arrived in March, four months late. Students lost half the year.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> Accountability. Jail time for missing deadlines focuses the mind.</div>
+    </div>
+
+    <!-- Solution 8 -->
+    <div style="background: #0d1210; border-radius: 1.5rem; padding: 1.2rem 1.5rem; margin-bottom: 1.5rem; border-left: 5px solid #2ecc71;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <span style="font-size: 1.8rem;">🏚️</span>
+            <strong style="font-size: 1.2rem; color: #5fdc7a;">8. Fund Rural Infrastructure Specifically for "Project-Based" Learning</strong>
+        </div>
+        <div style="color: #c8e0c4; margin-bottom: 6px;"><strong style="color: #7fdc9a;">What to do:</strong> If a government introduces a competency-based curriculum (like Hasina did), they must first ensure every rural school has internet, a printer, art supplies, and a trained teacher. Without these, the curriculum is a lie.</div>
+        <div style="color: #7fdc9a; font-size: 0.9rem; margin-top: 6px;">✅ <strong>Why it works:</strong> Stops the rich-poor grading gap. No child should fail because their village has no stationery shop.</div>
+    </div>
+
+    <!-- THE UNCOMFORTABLE TRUTH -->
+    <div style="background: #1a1010; border-radius: 1.8rem; padding: 1.8rem; margin: 1.8rem 0; border: 2px solid #c4451c;">
+        <div style="font-size: 1.5rem; font-weight: 700; color: #ff7a4a; text-align: center; margin-bottom: 1rem;">⚠️ The Uncomfortable Truth</div>
+        <div style="color: #e6cfb5; text-align: center; margin-bottom: 1rem; font-style: italic;">All Governments Knew. They Still Know. They Choose Not to Act.</div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;">Every single solution above is not new. They are not radical. They are not secret.</div>
+        
+        <div style="background: #0d0a0a; border-radius: 1rem; padding: 0.8rem 1.2rem; margin: 0.8rem 0;">
+            <span style="color: #ffaa7a;">🔴 BNP knew in 2004</span> that expanding madrasahs without modern subjects would create two Banglas. They did it anyway for Jamaat's votes.
+        </div>
+        <div style="background: #0d0a0a; border-radius: 1rem; padding: 0.8rem 1.2rem; margin: 0.8rem 0;">
+            <span style="color: #ffaa7a;">🔴 Hasina knew in 2021</span> that rolling out an untested curriculum without piloting would destroy rural students. She did it anyway for the optics of 'world-class reform.'
+        </div>
+        <div style="background: #0d0a0a; border-radius: 1rem; padding: 0.8rem 1.2rem; margin: 0.8rem 0;">
+            <span style="color: #ffaa7a;">🔴 Yunus's team knew</span> that abruptly canceling a curriculum mid-year causes suicides. They did it anyway to symbolically erase Hasina's legacy.
+        </div>
+        <div style="background: #0d0a0a; border-radius: 1rem; padding: 0.8rem 1.2rem; margin: 0.8rem 0;">
+            <span style="color: #ffaa7a;">🔴 The current BNP government already knows</span> that reverting to 2012 will confuse millions. They will do it anyway to claim 'we fixed the mess.'
+        </div>
+        
+        <div style="color: #ffaa7a; margin-top: 1rem; text-align: center; font-weight: 600;">Why don't they act?</div>
+        <div style="color: #cfc6bc; margin: 0.5rem 0;">Because a stable, apolitical curriculum does not win elections.</div>
+        <div style="color: #cfc6bc; margin: 0.3rem 0;">Chaos creates dependency. Confused parents beg politicians for 'guidance.' That is power.</div>
+        <div style="color: #cfc6bc; margin: 0.3rem 0;">Erasing the previous government's curriculum is the cheapest way to claim 'change' without building a single school.</div>
+        <div style="color: #cfc6bc; margin: 0.3rem 0;">Students do not vote. Parents of young children are too exhausted to protest. Teachers are afraid to speak.</div>
+    </div>
+
+    <!-- THE FINAL BRUTAL TRUTH -->
+    <div style="background: #0a0a0a; border-radius: 1.8rem; padding: 1.8rem; margin: 1.5rem 0; border-top: 3px solid #ff2e00; border-bottom: 3px solid #ff2e00;">
+        <div style="font-size: 1.3rem; font-weight: 700; color: #ff5e2e; text-align: center; margin-bottom: 1rem;">💀 The Final, Brutal Truth 💀</div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;">Every education minister, every prime minister, every adviser who has ever sat in that chair has received this exact list of solutions from UNESCO, from local educationists, from teacher associations, from grieving parents.</div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;">They read it. They nodded. And they did nothing.</div>
+        <div style="color: #cfc6bc; margin-bottom: 0.8rem;">Because a solved problem gives them no headlines. A stabilized curriculum gives the opposition no target. And a generation of broken students gives them no sleepless nights until the suicide notes surface. And even then, they blame 'social media' or 'family pressure' or anything except their own signature on the policy order.</div>
+        <div style="color: #ffaa7a; margin-top: 1rem; text-align: center; font-size: 1.1rem; font-weight: 600;">So the solutions exist. They have always existed. They are not expensive. They are not complicated.</div>
+        <div style="color: #ff5e2e; margin-top: 0.8rem; text-align: center; font-size: 1.2rem; font-weight: 800;">The only missing ingredient is a government that loves children more than it loves power.</div>
+    </div>
+
+    <!-- ========== ANONYMOUS OPINION SYSTEM (MERGED) ========== -->
+    <div class="opinion-panel">
+        <div class="opinion-title">💬 Your voice matters – completely anonymous</div>
+        <div class="opinion-sub">🔒 No email, no signup, no tracking. Just speak.</div>
+        
+        <div class="opinion-form">
+            <input type="text" id="opinionName" placeholder="Your name (or leave 'Anonymous')" value="Anonymous">
+            <textarea id="opinionMsg" rows="3" placeholder="Share your thoughts, anger, or experience with the education system..."></textarea>
+            <button id="submitOpinionBtn">✊🏽 Post opinion (anonymous & free)</button>
+        </div>
+        
+        <div class="opinion-list" id="opinionList">
+            <div class="opinion-item">
+                <div class="opinion-name">📢 8th grader, Dhaka</div>
+                <div class="opinion-text">I'm scared of exams. My friend cries every night but teachers say 'stop overreacting'. The system is broken and nobody listens.</div>
+                <div class="opinion-time">📅 just now</div>
+            </div>
+            <div class="opinion-item">
+                <div class="opinion-name">🧑‍🏫 Retired Teacher, Rangpur</div>
+                <div class="opinion-text">The coaching mafia destroyed our schools. Teachers deliberately teach badly so students pay for tuition. I've seen students cry for years.</div>
+                <div class="opinion-time">📅 2 days ago</div>
+            </div>
+            <div class="opinion-item">
+                <div class="opinion-name">🌾 Mother from Barishal</div>
+                <div class="opinion-text">My son in class 9 has no textbooks until March. Now they changed the exam pattern again. He doesn't sleep. I'm terrified for him.</div>
+                <div class="opinion-time">📅 3 days ago</div>
+            </div>
+        </div>
+        <div class="privacy-note">✨ All opinions stored locally in your browser. No server, no login. Your voice stays anonymous.</div>
+    </div>
+
+    <!-- MADE BY SECTION -->
+    <div class="footer-made">
+        <div style="font-size: 1.8rem; font-weight: 700; background: linear-gradient(125deg, #ff9a5e, #ff5930); background-clip: text; -webkit-background-clip: text; color: transparent;">Made by SaiF </div>
+        <div style="margin: 0.6rem 0; font-size: 1rem;">📌 an 8th grader from <strong style="color: #ffaa80;">St. Joseph Higher Secondary School, Dhaka, Bangladesh</strong></div>
+        <div style="margin: 0.4rem 0;">⚠️ concerned about this broken education system, 
+        "I spoke here because silence has already buried too many of us"</div>
+        <div style="margin: 0.5rem 0;">📬 Incase if any of ya want to contact me <a href="mailto:saifytoff@gmail.com" class="email-link">saifytoff@gmail.com</a></div>
+        <div style="margin-top: 1rem; font-size: 0.75rem; color: #886b55;">#FixBDEducation | data sources: Aachol Foundation, The Daily Star, Daily Observer, Wiley research, bdnews24, NIMH Bangladesh, ScienceDirect (2024-2026).</div>
+        <div style="margin-top: 1rem; font-size: 0.7rem;">🕯️ This page is dedicated to the 403 students we lost in 2025. Their silence screams.</div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        console.log("%c 🇧🇩 AWARENESS: 403 student suicides in 2025. Mental health matters. Share this page. #FixBDEducation", "background: #c4451c; color: white; font-size: 14px; padding: 8px; border-radius: 12px; font-weight: bold;");
+        console.log("📢 real cases from Daily Star, Aachol foundation, Wiley study. Saif, 8th grade, St Joseph's, speaks truth.");
+    })();
+
+    // ========== OPINION SYSTEM SCRIPT ==========
+    (function() {
+        const STORAGE_KEY = "bd_anon_opinions_wall";
+        let opinions = [
+            {
+                id: Date.now() + 1,
+                name: "📢 8th grader, Dhaka",
+                text: "I'm scared of exams. My friend cries every night but teachers say 'stop overreacting'. The system is broken and nobody listens.",
+                timestamp: Date.now() - 3600000
+            },
+            {
+                id: Date.now() + 2,
+                name: "🧑‍🏫 Retired Teacher, Rangpur",
+                text: "The coaching mafia destroyed our schools. Teachers deliberately teach badly so students pay for tuition. I've seen students cry for years.",
+                timestamp: Date.now() - 172800000
+            },
+            {
+                id: Date.now() + 3,
+                name: "🌾 Mother from Barishal",
+                text: "My son in class 9 has no textbooks until March. Now they changed the exam pattern again. He doesn't sleep. I'm terrified for him.",
+                timestamp: Date.now() - 259200000
+            }
+        ];
+
+        function loadOpinions() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                try {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        opinions = parsed;
+                    }
+                } catch(e) {}
+            } else {
+                saveOpinions();
+            }
+            renderOpinions();
+        }
+
+        function saveOpinions() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(opinions));
+        }
+
+        function formatTime(timestamp) {
+            const diff = Date.now() - timestamp;
+            const minutes = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            if (minutes < 1) return "just now";
+            if (minutes < 60) return `${minutes} min ago`;
+            if (hours < 24) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            return `${days} day${days > 1 ? 's' : ''} ago`;
+        }
+
+        function escapeHtml(str) {
+            if (!str) return "";
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        }
+
+        function renderOpinions() {
+            const container = document.getElementById("opinionList");
+            if (!container) return;
+            if (!opinions || opinions.length === 0) {
+                container.innerHTML = `<div style="text-align:center;padding:2rem;color:#8b7f6e;">No opinions yet. Be the first to speak up.</div>`;
+                return;
+            }
+            const sorted = [...opinions].sort((a, b) => b.timestamp - a.timestamp);
+            let html = '';
+            for (let op of sorted) {
+                html += `
+                    <div class="opinion-item">
+                        <div class="opinion-name">🗣️ ${escapeHtml(op.name)}</div>
+                        <div class="opinion-text">${escapeHtml(op.text)}</div>
+                        <div class="opinion-time">📅 ${formatTime(op.timestamp)}</div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        function addOpinion(name, message) {
+            if (!message || message.trim() === "") {
+                alert("❌ Please write your opinion before posting.");
+                return false;
+            }
+            const newOpinion = {
+                id: Date.now(),
+                name: name.trim() || "Anonymous",
+                text: message.trim(),
+                timestamp: Date.now()
+            };
+            opinions.unshift(newOpinion);
+            if (opinions.length > 80) opinions.pop();
+            saveOpinions();
+            renderOpinions();
+            return true;
+        }
+
+        const submitBtn = document.getElementById("submitOpinionBtn");
+        if (submitBtn) {
+            submitBtn.addEventListener("click", function() {
+                const nameInput = document.getElementById("opinionName");
+                const msgInput = document.getElementById("opinionMsg");
+                const name = nameInput ? nameInput.value : "Anonymous";
+                const msg = msgInput ? msgInput.value : "";
+                if (addOpinion(name, msg)) {
+                    if (msgInput) msgInput.value = "";
+                    const btnText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = "✓ Posted!";
+                    setTimeout(() => { submitBtn.innerHTML = btnText; }, 1500);
+                }
+            });
+        }
+        loadOpinions();
+        console.log("%c 🔥 Anonymous Opinion Wall ACTIVE | No signup needed.", "background:#c4451c; color:white; font-size:12px; padding:6px; border-radius: 12px;");
+    })();
+</script>
+</body>
+</html>
